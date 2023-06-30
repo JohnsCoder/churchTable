@@ -5,16 +5,16 @@ import { errors } from "../utils/erros";
 const sheetFilePath = `C:\\Users\\${
   os.userInfo().username
 }\\.church\\sheet.json`;
-const jsonTemplate = '{"person":[],"function":[]}';
+const jsonTemplate = '[]';
 
 function editSheet(sheet) {
   if (!fs.existsSync(sheetFilePath)) {
     try {
-      fs.writeFileSync(sheetFilePath, "");
+      fs.writeFileSync(sheetFilePath, jsonTemplate);
     } catch (err) {
       if (err.errno === errors.fs.code) {
         fs.mkdirSync(`C:\\Users\\${os.userInfo().username}\\.church\\`);
-        fs.writeFileSync(sheetFilePath, "");
+        fs.writeFileSync(sheetFilePath, jsonTemplate);
       }
     }
   }
@@ -23,6 +23,16 @@ function editSheet(sheet) {
 }
 
 function findSheet() {
+  if (!fs.existsSync(sheetFilePath)) {
+    try {
+      fs.writeFileSync(sheetFilePath, jsonTemplate);
+    } catch (err) {
+      if (err.errno === errors.fs.code) {
+        fs.mkdirSync(`C:\\Users\\${os.userInfo().username}\\.church\\`);
+        fs.writeFileSync(sheetFilePath, jsonTemplate);
+      }
+    }
+  }
   const sheetFile = fs.readFileSync(sheetFilePath, "utf-8");
 
   try {

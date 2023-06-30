@@ -3,7 +3,7 @@ import { Property as CSS } from "csstype";
 import { ManageContext } from "../pages/management/manage.context";
 import { api } from "../../utils/api";
 import Cookies from "../../utils/cookies";
-import { addRole } from "../../services/modifyJsonData";
+import { addRole } from "../../services/modifyRoleData";
 interface DialogContext {
   createDialog: Display;
   createDialogFunction: Display;

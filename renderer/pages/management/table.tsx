@@ -83,7 +83,7 @@ function RenderInputs() {
         }
       >
         <option value="" style={{ display: "none" }}></option>
-        <option value="" >vazio</option>
+        <option value="--">vazio</option>
         {people &&
           people.map((e) => (
             <option value={e.name} key={e.id}>
@@ -101,7 +101,7 @@ function RenderInputs() {
         }
       >
         <option value="" style={{ display: "none" }}></option>
-        <option value="" >vazio</option>
+        <option value="--">vazio</option>
 
         {functions &&
           functions.map((e) => <option key={e.id}>{e.name}</option>)}
@@ -191,34 +191,37 @@ export default function CreateTable() {
       {Number.isNaN(actualDays) ? (
         <></>
       ) : dayList.length < (actualDays as number) ? (
-        manageButtons.loadingButton.transform === "scale(0)" ? (
-          <button
-            className={styles["add-button"]}
-            onClick={() => {
-              if (inputLength > 0 && dayList.length < (actualDays as number)) {
-                sendValues();
-              }
-              if (dayList.length < (actualDays as number) && date !== "none") {
-                // console.log("adding");
-                setInputLength((eachInput) => eachInput + 1);
-              } else {
-                setInputLength(0);
-              }
-            }}
-          >
-            <Plus />
-          </button>
-        ) : (
-          <button
-            className={styles["loading-button"]}
-            style={{
-              transform: manageButtons.loadingButton.transform,
-            }}
-          >
-            <Image priority src={loading} alt="loading" />
-          </button>
-        )
+        // manageButtons.loadingButton.transform === "scale(0)" ?
+        // (
+        <button
+          className={styles["add-button"]}
+          onClick={() => {
+            if (inputLength > 0 && dayList.length < (actualDays as number)) {
+              sendValues();
+            }
+            if (dayList.length < (actualDays as number) && date !== "none") {
+              // console.log("adding");
+              setInputLength((eachInput) => eachInput + 1);
+            } else {
+              setInputLength(0);
+            }
+          }}
+        >
+          <Plus />
+        </button>
       ) : (
+        // )
+        // :
+        // (
+        //   <button
+        //     className={styles["loading-button"]}
+        //     style={{
+        //       transform: manageButtons.loadingButton.transform,
+        //     }}
+        //   >
+        //     <Image priority src={loading} alt="loading" />
+        //   </button>
+        // )
         <button
           className={styles["confirm-button"]}
           style={{

@@ -8,19 +8,6 @@ const roleFilePath = `C:\\Users\\${
 const jsonTemplate = '{"person":[],"function":[]}';
 
 function addRole(role: string, name: string) {
-  if (!fs.existsSync(roleFilePath)) {
-    try {
-      fs.writeFileSync(roleFilePath, jsonTemplate);
-    } catch (err) {
-      if (err.errno === errors.fs.code) {
-        fs.mkdirSync(
-          `C:\\Users\\${os.userInfo().username}\\.church\\`
-        );
-        fs.writeFileSync(roleFilePath, jsonTemplate);
-      }
-    }
-  }
-
   const rolesFile = fs.readFileSync(roleFilePath, "utf-8");
   const jsonFile = JSON.parse(rolesFile);
   let idx: number;
@@ -35,6 +22,17 @@ function addRole(role: string, name: string) {
 }
 
 function getRole() {
+  if (!fs.existsSync(roleFilePath)) {
+    try {
+      fs.writeFileSync(roleFilePath, jsonTemplate);
+    } catch (err) {
+      if (err.errno === errors.fs.code) {
+        fs.mkdirSync(`C:\\Users\\${os.userInfo().username}\\.church\\`);
+        fs.writeFileSync(roleFilePath, jsonTemplate);
+      }
+    }
+  }
+
   const rolesFile = fs.readFileSync(roleFilePath, "utf-8");
   return JSON.parse(rolesFile);
 }

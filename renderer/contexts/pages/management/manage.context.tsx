@@ -1,4 +1,4 @@
-import { deleteRole, getRole } from "../../../services/modifyJsonData";
+import { deleteRole, getRole } from "../../../services/modifyRoleData";
 import { api } from "../../../utils/api";
 import Cookies from "../../../utils/cookies";
 import { createContext, ReactNode, useEffect, useState } from "react";

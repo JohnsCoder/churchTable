@@ -1,24 +1,30 @@
 import styles from "../styles/components/navbar.module.css";
 import { Home, Sheet, Pencil, UserPlus, Cog } from "lucide-react";
-
+import Link from "next/link";
 export default function Navbar() {
   return (
     <>
       <ul className={styles.navbar}>
         <li className={styles["home-link"]}>
-          <a href={"/home"}>
-            <Home />
-          </a>
+          <Link href={"/home"}>
+            <a>
+              <Home />
+            </a>
+          </Link>
         </li>
         <li className={styles["sheet-link"]}>
-          <a href={"/management/table"}>
-            <Sheet />
-          </a>
+          <Link href={"/management/table"}>
+            <a>
+              <Sheet />
+            </a>
+          </Link>
         </li>
         <li className={styles["pen-link"]}>
-          <a href={"/management/manage"}>
-            <Pencil />
-          </a>
+          <Link href={"/management/manage"}>
+            <a>
+              <Pencil />
+            </a>
+          </Link>
         </li>
         {/* <li className={styles["userplus-link"]}>
           <a href={"/management/admin"}>
