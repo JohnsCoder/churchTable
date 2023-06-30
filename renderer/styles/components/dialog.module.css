@@ -1,0 +1,40 @@
+.dialog-window {
+  position: absolute;
+  top: 300px;
+  background-color: #ceecf2;
+  height: 250px;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding: 50px;
+  border-radius: 5px;
+  border: 2px solid black;
+  box-shadow: black 5px 5px 20px 2px;
+}
+
+.dialog-window label {
+  margin: 10px 10px 10px 0;
+  font-size: 20px;
+  align-self: self-start;
+}
+
+.dialog-window input {
+  height: 40px;
+  width: 100%;
+  padding: 8px;
+  font-size: 20px;
+}
+.dialog-window > div:nth-child(2) {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  width: 100%;
+}
+
+.dialog-window > div button {
+  padding: 10px;
+  background: #73aabf;
+  border-radius: 5px;
+}

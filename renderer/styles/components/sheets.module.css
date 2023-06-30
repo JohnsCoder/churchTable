@@ -1,0 +1,46 @@
+.sheets {
+  border: 1px solid black;
+  width: 100%;
+  height: 100%;
+  background: white;
+}
+.sheets tr,
+.sheets th {
+  border: 1px solid black;
+}
+
+.download-sheet {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+
+  width: 60px;
+  height: 60px;
+  border-radius: 13px;
+  border: 3px solid black;
+  background-color: #8bcad9;
+  opacity: 0;
+}
+
+.download-sheet:hover {
+  background-color: #7db4c1;
+  box-shadow: 10px 10px 4px 0px #8bcad996;
+  visibility: visible;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.sheets:hover ~ .download-sheet {
+  visibility: visible;
+  opacity: 1;
+}
+
+.download-sheet:active {
+  box-shadow: none;
+}
+
+.download-sheet svg {
+  width: 30px;
+  height: 30px;
+  font-weight: 200;
+}

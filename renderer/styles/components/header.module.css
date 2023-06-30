@@ -1,0 +1,25 @@
+.header {
+  width: 100%;
+  background-color: #6092a6;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 8px;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.header img {
+  width: 60px;
+  height: 60px;
+  margin: 0 10px;
+  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(11deg)
+    brightness(120%) contrast(120%);
+}
+
+.header h1 {
+  font-size: 48px;
+  color: #ffffff;
+}

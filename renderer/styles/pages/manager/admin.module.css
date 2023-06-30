@@ -1,0 +1,84 @@
+.admin-window {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.admin {
+  width: 80%;
+  margin-top: 30px;
+  max-width: 950px;
+
+}
+.admin label {
+  background: #73aabf;
+  padding: 6px;
+  font-size: 24px;
+  width: 122px;
+  border-radius: 14px;
+  grid-row: 1 / 2;
+  margin: 10px;
+}
+
+.admin > div {
+  background: #d9d9d9;
+
+  display: grid;
+  grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+
+.admin > div div {
+  background: #ceecf2;
+  height: 60px;
+  border: 2px solid black;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.delete-admin {
+  background: #ec9199;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 1px solid black;
+  transform: translateX(130px);
+  position: absolute;
+  cursor: pointer;
+}
+
+.delete-admin:hover {
+  box-shadow: #eba8ad 0px 0px 65px 40px;
+}
+.admin > div div:hover .delete-admin {
+  transform: translateX(76px);
+}
+
+.delete-admin svg {
+  width: 20px;
+  height: 20px;
+  margin: auto;
+}
+
+.admin > div div:last-child {
+  background: #6092a6;
+}
+.add-admin{
+  background: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.add-admin svg {
+  height: 30px;
+  width: 30px;
+}
